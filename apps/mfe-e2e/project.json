@@ -1,22 +1,22 @@
 {
-  "name": "angular-monorepo-e2e",
+  "name": "mfe-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/angular-monorepo-e2e/src",
+  "sourceRoot": "apps/mfe-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/angular-monorepo-e2e/cypress.config.ts",
-        "devServerTarget": "angular-monorepo:serve:development",
+        "cypressConfig": "apps/mfe-e2e/cypress.config.ts",
+        "devServerTarget": "mfe:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "angular-monorepo:serve:production"
+          "devServerTarget": "mfe:serve:production"
         },
         "ci": {
-          "devServerTarget": "angular-monorepo:serve-static"
+          "devServerTarget": "mfe:serve-static"
         }
       }
     },
@@ -24,10 +24,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/angular-monorepo-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/mfe-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["angular-monorepo"]
+  "implicitDependencies": ["mfe"]
 }
