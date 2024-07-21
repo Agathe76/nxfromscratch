@@ -2,9 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
-  template: `
-    mfe entry component
-  `,
+  templateUrl: './nx-welcome.component.html',
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })

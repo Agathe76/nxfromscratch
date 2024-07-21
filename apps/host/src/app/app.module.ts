@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { SharedUiModule } from '@angular-monorepo/shared/ui';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
+    SharedUiModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
