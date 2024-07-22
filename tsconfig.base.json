@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-monorepo/shared/data": ["libs/shared/data/src/index.ts"],
       "@angular-monorepo/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

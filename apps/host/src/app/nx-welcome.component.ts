@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { LoginService } from '@angular-monorepo/shared/data';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
@@ -8,4 +9,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent implements OnInit {
+
+  public constructor(public loginService: LoginService) {
+  }
+
+  public ngOnInit(): void {
+      console.log(this.loginService.user);
+  }
+}
