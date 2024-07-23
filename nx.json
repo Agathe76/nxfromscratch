@@ -1,14 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "angular-monorepo",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e", "server"]
+        "cacheableOperations": ["build", "lint", "test", "e2e", "server"],
+        "accessToken": "NzM1ZTc2NGEtNmY5My00MjY0LWJkMDAtMmI1OTIzOTBjZTVlfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -20,9 +19,7 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
+    "e2e": { "inputs": ["default", "^production"] },
     "lint": {
       "inputs": [
         "default",
@@ -49,12 +46,7 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "less"
-    }
+    "@nrwl/angular:library": { "linter": "eslint", "unitTestRunner": "jest" },
+    "@nrwl/angular:component": { "style": "less" }
   }
 }
