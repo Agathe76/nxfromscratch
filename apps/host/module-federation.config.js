@@ -1,4 +1,4 @@
 module.exports = {
   name: 'host',
-  remotes: ['mfe'],
+  remotes: ['mfe', 'mfev16'],
 };

@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:webpack-browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/host/browser",
@@ -53,7 +53,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nrwl/angular:module-federation-dev-server",
+      "executor": "@nx/angular:module-federation-dev-server",
       "options": {
         "port": 4200,
         "publicHost": "http://localhost:4200"
@@ -75,14 +75,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/host/**/*.ts", "apps/host/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/host/jest.config.ts",
@@ -96,7 +96,7 @@
       }
     },
     "serve-static": {
-      "executor": "@nrwl/web:file-server",
+      "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "host:build",
         "port": 4200
@@ -104,7 +104,7 @@
     },
     "server": {
       "dependsOn": ["build"],
-      "executor": "@nrwl/angular:webpack-server",
+      "executor": "@nx/angular:webpack-server",
       "options": {
         "outputPath": "dist/apps/host/server",
         "main": "apps/host/server.ts",
@@ -126,7 +126,7 @@
       "defaultConfiguration": "production"
     },
     "serve-ssr": {
-      "executor": "@nrwl/angular:module-federation-dev-ssr",
+      "executor": "@nx/angular:module-federation-dev-ssr",
       "configurations": {
         "development": {
           "browserTarget": "host:build:development",
